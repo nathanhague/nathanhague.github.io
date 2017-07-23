@@ -42,6 +42,24 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        (function() {
+	        console.clear();
+	        var namePlaceholder = $('#name')[0],
+		        apptPlaceholder = $('#name')[0];
+	        function prepareLocation() {
+		        let array = window.location.href.split('?');
+		        return array[1];}
+	        var args = prepareLocation(),
+		        things = args.split('&'),
+		        result = new Object;
+	        for (index in things) {
+		        let obj = things[index].split('=')
+		        result[obj[0]] = obj[1]}
+	        namePlaceholder.innerHTML = result.name
+	        apptPlaceholder.innerHTML = result.appt
+        })();
+   </script>
 </body>
 
 </html>
