@@ -47,7 +47,7 @@
 	        var namePlaceholder = $('#name')[0],
 		        apptPlaceholder = $('#appt')[0];
 	        function prepareLocation() {
-		        let array = window.location.href.split('?');
+		        let array = decodeURI(window.location.href).split('?');
 		        return array[1];}
 	        var args = prepareLocation(),
 		        things = args.split('&'),
